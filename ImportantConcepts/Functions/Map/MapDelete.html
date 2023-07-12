@@ -1,0 +1,204 @@
+<!--
+What is a map in JavaScript?
+
+	Map is a data structure in JavaScript which allows storing of [key, value] 
+	pairs where any value can be either used as a key or value.
+
+	The keys and values in the map collection may be of any type and if a value is 
+	added to the map collection using a key which already exists in the collection, 
+	then the new value replaces the old value.
+
+	The iteration of elements in a map object is done in the insertion order and a 
+	“for…” loop returns an array of all [key, value] pairs for each iteration.
+
+-------
+
+Differences between Objects and Maps in JavaScript:
+
+	Both of these data structures are similar in many ways such as both store values using keys, 
+	allow retrieval of those values using keys, deletion of keys and verify whether a key 
+	holds any value or not. 
+
+	However, there are quite significant differences between Objects and Maps in JavaScript
+	which make the usage of maps a better and more preferable option in many cases.
+
+	Map:
+
+		The keys used in maps can be any type of values such as functions, objects etc
+
+		The size of a map can be known easily by using the size property
+
+		A Map should be preferred in cases where the requirement involves 
+		frequent addition and removal of [key, value] pairs because a map is an 
+		iterative data type and can be directly iterated
+
+	Objects:
+
+		The keys in objects are limited to symbols and strings
+
+		While dealing with objects, the size has to be determined manually.
+
+		Iterating an object requires obtaining its keys in a specific manner.
+-->
+<!--
+
+Map.delete() Method in JavaScript
+
+	The Map.delete() method in JavaScript is used to delete the specified element 
+	among all the elements which are present in the map.
+
+	The Map.delete() method takes the key which needs to be removed from the map, 
+	thus removes the element associated with that key and returns true. 
+
+	If the key is not present then it returns false.
+
+	Applications:
+
+		Map.delete() is used to delete an element associated with the key among all 
+		the elements present in the map.
+	
+	Syntax:
+
+		my_map.delete(key)
+
+	Parameters Used:
+
+		key: The element associated with this key is to be removed from the map
+	
+	Return value:
+
+		The Map.delete() method returns true, if the key is present whose associated element 
+		is to removed which is passed as an argument, otherwise returns false.
+
+-------
+
+Examples:
+
+Input :  my_map.set(1, 'first');
+         my_map.set(2, 'second');
+         my_map.set(3,'third');
+         my_map.set(4,'fourth');
+
+         document.write(my_map.delete(3));
+
+Output : true
+
+Explanation: The key ‘3’ is present in the map hence element associated with it is removed and return true
+
+-------
+
+Input :  my_map.set(1, 'first');
+         my_map.set(2, 'second');
+         my_map.set(3,'third');
+         my_map.set(4,'fourth');
+   
+         document.write(my_map.delete(5));
+
+Output : false
+
+Explanation: The key ‘5’ is not present in the map hence it returns false.
+
+-------
+
+Error and Exception:
+
+	If the key passed as an argument to the function is not present in the map then it returns false. 
+
+	Basically, it neither throws any exception nor does it have any error.
+	
+	Difference in working of Map.clear(), Map.erase() and this function
+	
+	Map.clear() removes all key-value pairs of the map and reduces the size of the map to zero. 
+
+	Whereas Map.erase() removes the specified mapped value whose key is passed as an argument or 
+	iterator or in range to remove pairs.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script>
+		// creating a map object
+		var my_map = new Map();
+
+		// Adding [key, value] pair to the map
+		my_map.set(1, 'first');
+		my_map.set(2, 'second');
+		my_map.set(3,'third');
+		my_map.set(4,'fourth');
+
+		// will display true as key '3'
+		// is present and its associated
+		// element is removed as well
+		document.write(my_map.delete(3),"</br>","</br>");
+
+
+		// elements left in the map after deletion
+		document.write("key-value pair of the map",
+						" after deletion-","</br>");
+
+		my_map.forEach(function (item, key, mapObj)
+		{
+			document.write(key.toString(),":",
+						" ",item.toString() + "<br />");
+		});
+
+	</script>
+
+	<!--
+		Output:
+
+		true
+
+		key-value pair of the map after deletion-
+		1: first
+		2: second
+		4: fourth						
+	-->
+
+	<script>
+		// creating a map object
+		var my_map = new Map();
+
+		// Adding [key, value] pair to the map
+		my_map.set(1, 'first');
+		my_map.set(2, 'second');
+		my_map.set(3,'third');
+		my_map.set(4,'fourth');
+
+		// will display false as key '5'
+		// is not present and its associated
+		// element is removed as well
+		document.write(my_map.delete(5),
+					"</br>","</br>");
+
+		// elements left in the map after deletion
+		document.write("key-value pair of the map",
+					" after deletion-","</br>");
+
+		my_map.forEach(function (item, key, mapObj) {
+			document.write(key.toString(),":"," ",
+						item.toString() + "<br />");
+		});
+
+	</script>
+
+	<!--
+		Output:
+
+		false
+
+		key-value pair of the map after deletion-
+		1: first
+		2: second
+		3: third
+		4: fourth
+	-->				
+
+</body>
+</html>

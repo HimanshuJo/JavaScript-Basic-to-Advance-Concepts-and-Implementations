@@ -1,0 +1,294 @@
+var keyword in JavaScript: 
+
+	The var is the oldest keyword to declare a variable in JavaScript. 
+
+	Scope: 
+
+		Global scoped or function scoped. 
+
+		The scope of the var keyword is the global or function scope. 
+
+		It means variables defined outside the function can be accessed globally, 
+		and variables defined inside a particular function can be accessed within the function. 
+
+	Example 1: 
+
+		Variable ‘a’ is declared globally. 
+
+		So, the scope of the variable ‘a’ is global, and it can be accessible everywhere i
+		n the program. 
+
+		The output shown is in the console.
+
+		-------
+
+		<script>
+			var a = 10
+				function f(){
+					console.log(a)
+				}
+			f();
+			console.log(a);
+		</script>
+
+		Output: 
+
+		10
+		10
+
+	-------
+
+	Example 2: 
+
+		The variable ‘a’ is declared inside the function. 
+
+		If the user tries to access it outside the function, it will display the error. 
+
+		Users can declare the 2 variables with the same name using the var keyword. 
+
+		Also, the user can reassign the value into the var variable. 
+
+		The output shown in the console.
+
+		-------
+
+		<script>
+			function f() {
+
+				// It can be accessible any
+				// where within this function
+				var a = 10;
+				console.log(a)
+			}
+			f();
+
+			// A cannot be accessible
+			// outside of function
+			console.log(a);
+		</script>
+
+		Output:
+
+		10
+		ReferenceError: a is not defined
+
+	-------
+
+	Example 3: 
+
+		User can re-declare variable using var and user can update var variable. 
+
+		The output is shown in the console.
+
+		-------
+
+		<script>
+			var a = 10
+
+			// User can re-declare
+			// variable using var
+			var a = 8
+
+			// User can update var variable
+			a = 7
+		</script>
+
+		Output:
+
+		7
+
+	-------
+
+	Example 4: 
+
+		If users use the var variable before the declaration, it initializes with the undefined value. 
+
+		The output is shown in the console.
+
+		-------
+
+		<script>
+		    console.log(a);
+		    var a = 10;
+		<script>
+
+		Output:
+
+		undefined
+
+-------
+
+let keyword in JavaScript: 
+
+	The let keyword is an improved version of the var keyword.
+
+	Scope: block scoped: 
+
+		The scope of a let variable is only block scoped. 
+
+		It can’t be accessible outside the particular block ({block}). Let’s see the below example.
+
+	Example 1: The output is shown in the console.
+
+		<script>
+		    let a = 10;
+		    function f() {
+		        let b = 9
+		        console.log(b);
+		        console.log(a);
+		    }
+		    f();
+		</script>
+
+		Output:
+
+		9
+		10
+
+	-------
+
+	Example 2: 
+
+		The code returns an error because we are accessing the let variable outside the function block. 
+
+		The output is shown in the console.
+
+		<script>
+		    let a = 10;
+		    function f() {
+		        if (true) {
+		            let b = 9
+		 
+		            // It prints 9
+		            console.log(b);
+		        }
+		 
+		        // It gives error as it
+		        // defined in if block
+		        console.log(b);
+		    }
+		    f()
+		 
+		    // It prints 10
+		    console.log(a)
+		</script>
+
+		Output:
+
+		9
+		ReferenceError: b is not defined
+
+	-------
+
+	Example 3: 
+
+		Users cannot re-declare the variable defined with the let keyword but can update it.
+
+		<script>
+		 
+		    let a = 10
+		 
+		    // It is not allowed
+		    let a = 10
+		 
+		    // It is allowed
+		    a = 10
+		</script>
+
+		Output:
+
+		Uncaught SyntaxError: Identifier 'a' has already been declared
+
+	-------
+
+	Example 4: 
+
+		Users can declare the variable with the same name in different blocks using the let keyword.
+
+		<script>
+		  let a = 10
+		  if (true) {
+		    let a=9
+		    console.log(a) // It prints 9
+		  }
+		  console.log(a) // It prints 10
+		</script>
+
+		Output:
+
+		9 
+		10
+
+	-------
+
+	Example 5: 
+
+		If users use the let variable before the declaration, it does not initialize with undefined 
+		just like a var variable and return an error.
+
+		<script>
+		    console.log(a);
+		    let a = 10;
+		</script>
+
+		Output:
+
+		Uncaught ReferenceError: Cannot access 'a' before initialization
+
+-------
+
+const keyword in JavaScript: 
+
+	The const keyword has all the properties that are the same as the let keyword, 
+	except the user cannot update it.
+
+	Scope: block scoped: 
+
+		When users declare a const variable, they need to initialize it, otherwise, it returns an error. 
+
+		The user cannot update the const variable once it is declared. 
+
+	Example 1: We are changing the value of the const variable so that it returns an error. 
+
+		The output is shown in the console.
+
+		<script>
+		    const a = 10;
+		    function f() {
+		        a = 9
+		        console.log(a)
+		    }
+		    f();
+		</script>
+
+		Output:
+
+		a=9
+		TypeError:Assignment to constant variable.
+
+	-------
+
+	Example 2: 
+
+		Users cannot change the properties of the const object,
+		but they can change the value of properties of the const object.
+
+		<script>
+		    const a = {
+		        prop1: 10,
+		        prop2: 9
+		    }
+		     
+		    // It is allowed
+		    a.prop1 = 3
+		 
+		    // It is not allowed
+		    a = {
+		        b: 10,
+		        prop2: 9
+		    }
+		</script>
+		
+		Output:
+
+		Uncaught SyntaxError:Unexpected identifier

@@ -1,0 +1,89 @@
+<!-- 
+The escape() function takes a string as a parameter and encodes 
+it so that it can be transmitted to any computer in any network which supports ASCII characters.
+
+Syntax:
+
+escape(string)
+
+Parameters: 
+
+	This function accepts a single parameter as mentioned above and described below:
+
+string: 
+
+	This parameters holds the string that will be encoded.
+
+Return value: 
+
+	This function returns a encoded string.
+
+Note: This function only encodes the special characters, this function is depricated.
+Exceptions: @ – + . / * _
+-->
+
+<!DOCTYPE html>
+<html>
+<body>
+	<script>
+		// Special character encoded with
+	   // escape function
+	   document.write(escape("Geeks for Geeks!!!"));
+	  
+	   document.write("<br>");
+	  
+	   // Print encoded string using escape() function
+	   // Also include exceptions i.e. @ and .
+	   document.write(escape("To contribute articles contact"+ 
+	   	                     " us at review-team@geeksforgeeks.org"));
+	</script>
+
+	<!--
+		Output:
+
+		Geeks%20for%20Geeks%21%21%21
+		To%20contribute%20articles%20contact%20us%20atcontribute
+		@geeksforgeeks.org 
+	-->
+
+	<script>
+	   // Special character encoded with
+	   // escape function
+	   document.write(escape("Geeks for Geeks!!!"));
+	  
+	   document.write("<br>");
+	  
+	   // Print encoded string using escape() function
+	   // Also include exceptions i.e. @ and .
+	   document.write(escape("A Computer Science Portal"));
+	</script>
+
+	<!--
+		Output:
+
+		Geeks%20for%20Geeks%21%21%21
+		A%20Computer%20Science%20Portal
+	-->
+
+	<script>
+	// Special character encoded with
+	// escape function
+	document.write(escape("GeeksforGeeks"));
+
+	document.write("<br>");
+
+	// Print encoded string using escape() function
+	// Also include exceptions i.e. @ and .
+	document.write(escape("A#Computer-Science"+
+						"%Portal@for*Geeks"));
+	</script>				
+
+
+	<!--
+		Output:
+
+		GeeksforGeeks
+		A%23Computer-Science%25Portal@for*Geeks
+	-->
+</body>
+</html>

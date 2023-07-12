@@ -1,0 +1,31 @@
+<script>
+    const DIGIT_EXPRESSION = /^\d$/;
+
+    const isDigit = (character) => {
+        return character && DIGIT_EXPRESSION.test(character);
+    };
+
+    // digits
+
+    console.log(isDigit('0')); // true
+    console.log(isDigit('5')); // true
+    console.log(isDigit('9')); // true
+
+    // letters
+
+    console.log(isDigit('a')); // false
+    console.log(isDigit('z')); // false
+    console.log(isDigit('A')); // false
+    console.log(isDigit('Z')); // false
+
+    // other
+
+    console.log(isDigit('10')); // false
+    console.log(isDigit('ab')); // false
+    console.log(isDigit('😎')); // false
+
+    console.log(isDigit('-')); // false
+    console.log(isDigit('.')); // false
+    console.log(isDigit('+')); // false
+    console.log(isDigit('*')); // false
+</script>

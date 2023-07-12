@@ -1,0 +1,81 @@
+<!--
+The date.parse() method is used to know the exact number of milliseconds that 
+have passed since midnight, January 1, 1970, till the date we provide.
+
+Syntax: 
+
+	Date.parse(datestring);
+
+Parameters: 
+
+	This method accept a single parameter as mentioned above and described below: 
+ 
+datestring: 
+
+	This parameter holds the date as a string.
+
+Return Values: 
+
+	It returns an integer value representing the number of a millisecond between midnight January 1, 1970, 
+	and the date provided. 
+
+	If by any means, the machine can’t recognize the string or the input string is invalid, 
+	it will return “NaN” instead of an integer.
+
+Note: If the input string of date is not correct, it return NaN i.e, not a number. 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script>
+		// Taking a date string as input.
+		var date = "February 18, 2018 12:30 PM";
+		
+		// Calling parse function on input date string.
+		var msec = Date.parse(date);
+		document.write(msec);
+	</script>
+
+	<!--
+		Output: 
+ 
+		1518937200000
+	-->
+
+	<script>
+		// Taking wrong date string as input.
+		var date = "February 48, 2018 12:30 PM";
+		
+		// calling parse function.
+		var msec = Date.parse(date);
+		document.write(msec);
+	</script>
+
+	<!--
+		Output: 
+
+		NaN
+	-->
+
+	<script>
+		// Taking not the full date, time string as input.
+		var date = "June 22, 2012";
+		
+		// Calling parse function.
+		var msec = Date.parse(date);
+		document.write(msec);
+	</script>				
+			
+	<!--
+		Output: 
+
+		1340303400000
+	-->
+</body>
+</html>

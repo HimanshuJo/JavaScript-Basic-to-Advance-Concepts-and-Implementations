@@ -1,0 +1,58 @@
+<!--
+The concat() method joins two or more strings.
+
+The concat() method does not change the existing strings.
+
+The concat() method returns a new string.
+
+-------
+
+Syntax
+
+	string.concat(string1, string2, ..., stringX)
+
+-------
+
+Parameters:
+
+	Parameter	Description
+	string1,    Required
+	string2,    The strings to be joined.
+	...
+	stringX	
+
+-------
+
+Return Value:
+
+	Type	Description
+
+	A string	A new string containing the combined strings.
+
+-->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Strings</h1>
+<h2>The concat() Method</h2>
+
+<p>The concat() method joins two or more strings.</p>
+
+<p>Join 3 strings with a space between each string:</p>
+
+<p id="demo"></p>
+
+<script>
+let text1 = "Hello";
+let text2 = "world!";
+let text3 = "Have a nice day!";
+let result = text1.concat(" ", text2, " ", text3);
+
+document.getElementById("demo").innerHTML = result;
+</script>
+
+</body>
+
+</html>

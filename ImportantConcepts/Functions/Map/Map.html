@@ -1,0 +1,135 @@
+<!--
+The Map.get() method in JavaScript is used for returning a specific element 
+among all the elements which are present in a map. 
+
+The Map.get() method takes the key of the element to be returned as an argument and 
+returns the element which is associated with the specified key passed as an argument. 
+
+If the key passed as an argument is not present in the map, then Map.get() method returns undefined. 
+
+The Map.get() method is used to get a specific element among all the elements which are present in a map.
+
+-------
+
+Syntax:
+
+	mapObj.get(key)
+
+Parameter Value:
+
+	key: It is the key of the element of the map which has to be returned.
+
+Return Value: 
+
+	The Map.get() method returns the element which is associated with the specified key 
+	passed as an argument or undefined if the key passed as an argument is not present in the map.
+
+-------
+
+The examples below illustrate the get() method:
+
+Example 1: 
+
+	This example describes the Map() method to create the map object that contains the 
+	[key, value] pair to the map & displays the element that is associated with the specific 
+	key using the Map.get() method.
+-->
+
+<!--
+	Differences between Objects and Maps in JavaScript: 
+
+		Both of these data structures are similar in many ways such as 
+		both are used to store values using keys, allowing retrieval of those values using 
+		keys, deletion of keys, and verifying whether a key holds any value or not. 
+
+		However, there are quite significant differences between Objects and Maps in JavaScript 
+		which make the usage of maps a better and more preferable option in many cases.
+
+		Map:
+
+			The keys used in maps can be any type of values such as functions, objects etc
+
+			The size of a map can be known easily by using the size property
+
+			A Map should be preferred in cases where the requirement involves 
+			frequent addition and removal of [key, value] pairs because a map is an 
+			iterative data type and can be directly iterated
+
+		Objects:
+
+			The keys in objects are limited to symbols and strings
+
+			While dealing with objects, the size has to be determined manually.
+
+			Iterating an object requires obtaining its keys in a specific manner.
+-->
+
+<!--
+	Exceptions:
+
+	If the variable is not of the Map type then the Map.get() operation throws a TypeError.
+
+	If the index specified in the Map.get() function doesn’t belong to the 
+	[key, value] pairs of a map, the Map.get() function returns undefined.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script>
+		// Creating a map object
+		var myMap = new Map();
+
+		// Adding [key, value] pair to the map
+		myMap.set(0, 'GeeksforGeeks');
+
+		// Displaying the element which is associated with
+		// the key '0' using Map.get() method
+		document.write(myMap.get(0));
+	</script>
+
+	<!--
+		Output:
+
+		"GeeksforGeeks"
+	-->
+
+	<!--
+		Example 2: 
+
+			This example describes the Map() method to create the map object that contains 
+			the multiple [key, value] pair to the map & displays the element that is associated 
+			with the specific key using the Map.get() method.
+	-->
+
+	<script>
+		// Creating a map object
+		var myMap = new Map();
+
+		// Adding [key, value] pair to the map
+		myMap.set(0, 'GeeksforGeeks');
+		myMap.set(1, 'is an online portal');
+		myMap.set(2, 'for geeks');
+
+		// Displaying the elements which are associated with the keys '0', '2'
+		// and '4' using Map.get() method
+		document.write(myMap.get(0),"</br>");
+		document.write(myMap.get(2),"</br>");
+		document.write(myMap.get(4),"</br>");
+	</script>
+
+	<!--
+		Output:
+
+		"GeeksforGeeks"
+		"for geeks"
+		undefined
+	-->
+
+</body>
+</html>

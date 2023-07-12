@@ -1,0 +1,76 @@
+<!--
+The unescape() function in JavaScript takes a string as a parameter and uses 
+to decode that string encoded by the escape() function. 
+
+The hexadecimal sequence in the string is replaced by the characters they represent when decoded via unescape().
+
+Syntax:
+
+	unescape(string)
+
+Parameters:
+
+	This function accepts a single parameter as mentioned above and described below:
+
+string:
+
+	This parameters holds the string that will be decoded.
+
+Return value: 
+
+	This function returns a decoded string.
+
+Note: This function only decodes the special characters, this function is depricated.
+
+Exceptions: @ – + . / * _
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script>
+		// Special character encoded with
+		// escape function
+		var str = escape("Geeks for Geeks!!!");
+		document.write("Encoded : " + str);
+
+		// New Line
+		document.write("<br>");
+
+		// unescape() function
+		document.write("Decoded : " + unescape(str))
+
+		// New Line
+		document.write("<br><br>");
+
+		// The exception
+		// @ and . not encoded.
+		str = escape("To contribute articles contact us" +
+						"at review-team@geeksforgeeks.org")
+		document.write("Encoded : " + str);
+
+		// New Line
+		document.write("<br>");
+
+		// unescape() function
+		document.write("Decoded : " + unescape(str))
+
+	</script>
+
+	<!--
+		Output:
+
+		Encoded : Geeks%20for%20Geeks%21%21%21
+		Decoded : Geeks for Geeks!!!
+
+		Encoded : To%20contribute%20articles%20contact%20us%20at%20review-team@geeksforgeeks.org
+		Decoded : To contribute articles contact us at review-team@geeksforgeeks.org
+	-->
+
+</body>
+</html>

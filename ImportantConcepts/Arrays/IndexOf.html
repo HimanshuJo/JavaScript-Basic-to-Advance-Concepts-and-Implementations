@@ -1,0 +1,31 @@
+<!--
+Get the Index of the Max value in an Array
+
+To get the index of the max value in an array:
+
+	Get the max value in the array, using the Math.max() method.
+	
+	Call the indexOf() method on the array, passing it the max value.
+	
+	The indexOf method returns the index of the first occurrence of the value in 
+	the array or -1 if the value is not found.
+-->
+
+<script>
+const arr = [3, 5, 8, 100, 20, 100];
+
+const max = Math.max(...arr);
+
+const index1 = arr.indexOf(max);
+
+const indexes = [];
+
+for (let index = 0; index < arr.length; index++) {
+  if (arr[index] === max) {
+    indexes.push(index);
+  }
+}
+
+console.log(indexes)
+console.log(index1)
+</script>

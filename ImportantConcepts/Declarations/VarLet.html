@@ -1,0 +1,121 @@
+<!--
+var and let are both used for variable declaration in javascript 
+but the difference between them is that var is function scoped and let is block scoped. 
+
+It can be said that a variable declared with var is defined throughout the program as compared to let. 
+
+An example will clarify the difference even better:
+
+	Example of var:
+
+		Input:
+		console.log(x);
+		var x=5;
+		console.log(x);
+
+		Output:
+		undefined
+		5
+
+	-------
+
+	Example of let:
+
+		Input:
+		console.log(x);
+		let x=5;
+		console.log(x);
+
+		Output:
+		Error
+
+-->
+<!--
+In the following code, clicking start will call a function that changes the color of the 
+two headings every 0.5sec. 
+
+The color of first heading is stored in a var and the second one is declared by using let. 
+
+Both of them are then accessed outside the function block. 
+
+	Var will work but the variable declared using let will show an error because let is block scoped
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Var vs Let</title>
+</head>
+
+<body>
+
+	<h1 id="var" style="color:black;">GeeksForGeeks</h1>
+	<h1 id="let" style="color:black;">GeeksForGeeks</h1>
+	<button id="btn" onclick="colour()">Start</button>
+	<!-- executing function on button click -->
+
+	<script type="text/javascript">
+		function colour() {
+
+			setInterval(function() {
+
+				if (document.getElementById('var').style.color == 'black')
+					var col1 = 'blue';
+				else
+					col1 = 'black';
+
+				// setting value of color 1 through var
+
+				if (document.getElementById('let').style.color == 'black') {
+					let col2 = 'red';
+				} else {
+					col2 = 'black';
+				}
+
+				// setting value of color 2 through let
+
+				document.getElementById('var').style.color = col1;
+
+				document.getElementById('let').style.color = col2;  // error
+
+				// changing color of h1 in html
+			}, 500);
+
+		}
+	</script>
+</body>
+
+</html>
+
+<!--
+Differences:
+
+Var:
+
+	The var is a statement that is used to declare a variable
+
+	Syntax -: var name = value;
+
+	It takes parameters as a name of the variable and the value that we want to assign to our variable
+
+	Example -: var websitename = “geeksforgeeks”;
+
+	var is an ECMAScript1 feature.
+
+	Its supported browsers are -: Chrome , InternettheExplorer, Microsoft Edge, Firefox, safari , opera
+
+let:
+
+	The let is also a statement that is used to declare a variable.
+
+	The variables that are defined with let statement have a block scope.
+
+	We cannot declare a variable more than once if we defined that previously
+
+	Example -: let x = 69;
+
+	let is a feature of ES6.
+
+	Its supported browsers are -: Chrome49, Microsoft Edge12, firefox44 , safari11, opera36
+-->

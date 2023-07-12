@@ -1,0 +1,101 @@
+<!-- 
+The parseInt() function is used to accept the string, radix parameter and 
+convert it into an integer.
+
+The radix parameter is used to specify which numeral system to be used, 
+for example, a radix of 16 (hexadecimal) indicates that the number in the string should be 
+parsed from a hexadecimal number to a decimal number. 
+
+If the string does not contain a numeric value then it returns NaN i.e, not a number.
+
+-------
+
+Syntax:
+
+	parseInt(Value, radix)
+
+-------
+
+Parameters: This function accepts two parameters as mentioned above and described below:
+
+	Value: 
+
+		This parameter contains a string which is converted to an integer.
+
+	radix: 
+
+		This parameter represents the radix or base to be used and it is optional.
+
+-------
+
+Return value: 
+
+	It returns a number and if the first character can’t be converted to a number then the 
+	function returns NaN. 
+
+	It actually returns a number parsed up to that point where it encounters a character that is 
+	not a number in the specified radix(base).
+
+-------
+
+Below examples illustrate the parseInt() function in JavaScript:
+
+Example 1: The n contains 2018 as ‘@’ is not a Number and parsing stops at that point,further characters are ignored.
+Input: var n = parseInt("2018@geeksforgeeks");
+Output: n = 2018
+
+Example 2:
+Input: var a = parseInt("1000");
+Output: a = 1000(Number)
+-->
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<script>
+		
+		// Base 10
+		a = parseInt("100",10);
+		document.write('parseInt("100",10) = ' +
+		a + "<br>");
+		
+		// Base 8
+		b = parseInt("8",8);
+		document.write('parseInt("8",8) = ' +
+		b + "<br>");
+		
+		// Base 8
+		c = parseInt("15",8);
+		document.write('parseInt("15",8) = ' +
+		c + "<br>");
+		
+		// Base 16
+		d = parseInt("16",16);
+		document.write('parseInt("16",16) = ' +
+		d + "<br>");
+		
+		// Leading and trailing spaces are ignored
+		// in parseInt() function
+		e = parseInt(" 100 ");
+		document.write('parseInt(" 100 ") = ' +
+		e + "<br>");
+		
+		// Base 16(hexadecimal)
+		f = parseInt("0x16");
+		document.write('parseInt("0x16") = ' +
+		f + "<br>");
+		
+		</script>
+	
+		<!--
+			Output:
+
+			parseInt("100",10) = 100
+			parseInt("8",8) = NaN
+			parseInt("15",8) = 13
+			parseInt("16",16) = 22
+			parseInt(" 100 ") = 100
+			parseInt("0x16") = 22
+		-->
+	</body>
+</html>								

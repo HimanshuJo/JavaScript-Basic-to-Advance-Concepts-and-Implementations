@@ -1,0 +1,36 @@
+How to create an empty two dimensional array (one-line)
+
+Way 1:
+
+	var arr = Array.from(Array(2), () => new Array(4));
+	arr[0][0] = 'foo';
+	console.info(arr);
+
+-------
+
+Way 2:
+
+	var x = new Array(10);
+
+	for (var i = 0; i < x.length; i++) {
+	  x[i] = new Array(3);
+	}
+
+	console.log(x);
+
+-------
+
+Way 3:
+
+	const M = 3, N = 4;
+	 
+	var arr = [];
+	for (var i = 0; i < M; i++) {
+	     arr[i] = [];
+	}
+	 
+	console.log(arr);
+	 
+	/*
+	    Output: [ [], [], [] ]
+	*/

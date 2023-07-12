@@ -1,0 +1,164 @@
+<!--
+What is a map in JavaScript?
+
+	Map is a data structure in JavaScript which allows storing of [key, value] 
+	pairs where any value can be either used as a key or value.
+
+	The keys and values in the map collection may be of any type and if a value is 
+	added to the map collection using a key which already exists in the collection, 
+	then the new value replaces the old value.
+
+	The iteration of elements in a map object is done in the insertion order and a 
+	“for…” loop returns an array of all [key, value] pairs for each iteration.
+
+-------
+
+Differences between Objects and Maps in JavaScript:
+
+	Both of these data structures are similar in many ways such as both store values using keys, 
+	allow retrieval of those values using keys, deletion of keys and verify whether a key 
+	holds any value or not. 
+
+	However, there are quite significant differences between Objects and Maps in JavaScript
+	which make the usage of maps a better and more preferable option in many cases.
+
+	Map:
+
+		The keys used in maps can be any type of values such as functions, objects etc
+
+		The size of a map can be known easily by using the size property
+
+		A Map should be preferred in cases where the requirement involves 
+		frequent addition and removal of [key, value] pairs because a map is an 
+		iterative data type and can be directly iterated
+
+	Objects:
+
+		The keys in objects are limited to symbols and strings
+
+		While dealing with objects, the size has to be determined manually.
+
+		Iterating an object requires obtaining its keys in a specific manner.
+
+-------
+
+Map.entries() Method in JavaScript:
+
+	The Map.entries() method in JavaScript is used for returning an iterator object 
+	which contains all the [key, value] pairs of each element of the map. 
+
+	It returns the [key, value] pairs of all the elements of a map in the order of their insertion.
+
+	The Map.entries() method does not require any argument to be passed and returns 
+	an iterator object of the map.
+
+	Applications:
+
+		Whenever we want to get all the [key, value] pairs of each element of a map using an 
+		iterator object, we use the Map.entries() method.
+
+	Syntax:
+
+		mapObj.entries()
+
+	Parameters Used:
+
+		It does not require any parameters to be passed.
+
+	Return Value:
+
+		The Map.entries() method returns the [key, value] pairs of all the 
+		elements of a map in the order of their insertion.
+
+-------
+
+Example:
+
+Input : var myMap = new Map();
+        myMap.set(0, 'geeksforgeeks');
+        myMap.set(1, 'is an online portal');
+        myMap.set(2, 'for geeks');
+        var iterator_obj=myMap.entries();
+        document.write(iterator_obj.next().value,"<br>");
+        document.write(iterator_obj.next().value,"<br>");
+        document.write(iterator_obj.next().value,"<br>");
+
+
+Output : Array [0, "geeksforgeeks"]
+         Array [1, "is an online portal"]
+         Array [2, "for geeks"]
+
+Explanation: 
+
+	In this example, a map object “myMap” has been created with a three [key, value] pairs 
+	and an iterator object “iterator_obj” method is created which uses Map.entries() method to 
+	return the [key, value] pairs of all the elements of a map in the order of their insertion.
+
+-------
+
+Exceptions :
+
+	If the variable is not of the Map type then the Map.entries() operation throws a TypeError.
+
+	If the “iterator_obj.next().value” is used more number of times as compared to 
+	[key, value] pairs of a map, the Map.entries() function returns undefined for all those cases.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script>
+		// creating a map object
+		var myMap = new Map();
+
+		// Adding [key, value] pair to the map
+		myMap.set(0, 'geeksforgeeks');
+		myMap.set(1, 'is an online portal');
+		myMap.set(2, 'for geeks');
+
+		// creating an iterator object using Map.entries() method
+		var iterator_obj = myMap.entries();
+
+		// displaying the [key, value] pairs of all the elements of the map
+		document.write(iterator_obj.next().value,"</br>");
+		document.write(iterator_obj.next().value,"</br>");
+		document.write(iterator_obj.next().value,"</br>");
+	</script>					
+
+	<!--
+		Output :
+
+		Array [0, "geeksforgeeks"]
+		Array [1, "is an online portal"]
+		Array [2, "for geeks"]
+	-->
+
+	<script>
+		// creating a map object
+		var myMap = new Map();
+
+		// Adding [key, value] pair to the map
+		myMap.set(0, 'Maps');
+		myMap.set(1, 'in JavaScript');
+
+		// creating an iterator object using Map.entries() method
+		var iterator_obj = myMap.entries();
+
+		// displaying the [key, value] pairs of all the elements of the map
+		document.write(iterator_obj.next().value,"</br>");
+		document.write(iterator_obj.next().value,"</br>");
+	</script>					
+
+	<!--
+		Output :
+
+		Array [0, "Maps"]
+		Array [1, "in JavaScript"]
+	-->
+</body>
+</html>

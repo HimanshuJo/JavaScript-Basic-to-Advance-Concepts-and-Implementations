@@ -1,0 +1,118 @@
+Create an Array of Length Using Array() Constructor in JavaScript
+
+1. The first way of creating an empty array of specific lengths is by using the 
+
+		Array() constructor and passing an integer as an argument to it. 
+
+		Since we are calling a constructor, we will be using the new keyword.
+
+		-------
+
+		var arr = new Array(5);
+		console.log(arr)
+		
+		Output:
+
+		[undefined, undefined, undefined, undefined, undefined]
+
+-------
+
+2. Create an Array of Lengths Using the apply() Method in JavaScript
+
+	The Array constructor provides a method called apply(). 
+
+	Using this apply() method, you can provide arguments to a method in the form of an array.
+
+	The apply() method takes two arguments, the first is the reference to this argument, and the second is the array.
+
+	-------
+
+	var myArr = Array.apply(null, Array(5));
+	console.log(myArr);
+	
+	Output:
+
+	[undefined, undefined, undefined, undefined, undefined]
+
+	-------
+
+	To create an empty array of a specific length, let’s say 5, 
+	we will pass null as the first argument, and the second is the array Array(5). 
+
+	This will create an array of length 5 and initialize each element with an undefined value.
+
+	Alternatively, you can also do the following. 
+
+		Here, you can pass an array object as the second parameter and then inside it define 
+		the length of the array that you want to create, in this case, 5.
+
+	-------
+
+	var arr = Array.apply( null, { length: 5 } );
+	console.log(arr);
+	console.log(arr.length);
+	
+	Output:
+
+	[undefined, undefined, undefined, undefined, undefined]
+	5
+
+-------
+
+3. Create an Array of Lengths Using the map() Method in JavaScript
+
+	Another way of creating an array of specific lengths is to use the map() method in JavaScript. 
+
+	Here, the Array(5) constructor will create an empty array of length 5. 
+
+	This is similar to what we saw previously. 
+
+		Then using the spread operator ..., we will spread every element of the array and 
+		enclose this inside a square bracket like this [...Array(5)]. 
+
+		It will create an array of length 5 where the value of each element will be undefine. 
+
+		Then to initialize this array, we will make use of the map() method.
+
+	-------
+
+	[...Array(5)].map(x => 0);
+	
+	Output:
+
+	[0, 0, 0, 0, 0]
+
+	Using the map() method, we will take every element inside the x variable and 
+	then add value zero to it. 
+
+		This will initialize all the elements of the array to zero.
+
+-------
+
+4. Creates an Array of Length Using the fill() Method in JavaScript
+
+	The fill() method also works the same way as map() does; the only thing is that the fill() 
+	does not take any function as a parameter. 
+
+	It directly takes a value as an input. 
+
+	You can create an array of specific length Array(5) and then fill the array with some 
+	integer value, as shown below.
+
+	Array(5).fill(0);
+	// [0, 0, 0, 0, 0]
+
+-------
+
+5. 2 D Arrays:
+
+	var arr=new Array(50);
+	for(let i=0; i<=50; ++i){
+	    arr[i]=new Array(50).fill(-1);
+	}
+
+-------
+
+6. 2 D Arrays:
+
+	var dist=Array.from(new Array(5),()=>new Array(5).fill(-1));

@@ -1,0 +1,49 @@
+<!--
+The replace() method in JavaScript is used to replace the current page with another page. 
+
+The Replace Method replaces the URL of the current window by the URL mention in the Replace method.
+
+Syntax:
+
+	location.replace(URL)
+
+Parameter:
+
+	This method accepts single parameter URL. 
+
+	The URL is the reference of other page which need to replace with older page.
+
+Return Value: 
+
+	This method returns or open the new page in window.
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Redirect to Webpage</title>
+		<style>
+			body{
+				text-align:center;
+			}
+			.gfg {
+				font-size:40px;
+				font-weight:bold;
+				color:green;
+			}
+		</style>
+	</head>
+	<body>
+	<div class = "gfg">GeeksforGeeks</div>
+	<h2>Replace Method</h2>
+	<button onclick = "Replace()" >Replace with Gfg</button>
+		<script>
+
+			//Replace function that replace the current page.
+			function Replace() {
+				location.replace("https://www.geeksforgeeks.org/")
+			};
+
+		</script>
+	</body>
+</html>

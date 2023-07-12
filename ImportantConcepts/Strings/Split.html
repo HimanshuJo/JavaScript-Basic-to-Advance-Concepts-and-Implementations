@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Strings</h1>
+<h2>The split() Method</h2>
+
+<p>split() splits a string into an array of substrings, and returns the array:</p>
+
+<p id="demo"></p>
+
+<script>
+let text = "How are you doing today?";
+
+// split the words
+const myArray1 = text.split(" "); // How,are,you,doing,today?
+
+// split the characters including spaces
+const myArray2 = text.split(""); // H,o,w, ,a,r,e, ,y,o,u, ,d,o,i,n,g, ,t,o,d,a,y,?
+
+// suing limit parameter
+const myArray3 = text.split(" ", 3); // How,are,you
+
+document.getElementById("demo").innerHTML = myArray; 
+</script>
+
+</body>
+</html>

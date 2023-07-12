@@ -1,0 +1,138 @@
+For-In Loop:
+
+    The for-in loop always loops over an object’s elements one by one. 
+
+    These names can be array indexes or key-value pairs.
+
+    The syntax for the Javascript for-in loop is:
+
+        for (let i in object) {
+            console.log(object[i]);
+        }
+
+    If the object is an array, the for-in loop will print out the array indexes in order. 
+
+    If the object contains key-value pairs, the for-in loop will print out each key that exists. 
+
+    The for-in loop does not guarantee that keys within key-value pairs will always be accessed in the same order.
+
+-------
+
+For-Of Loop:
+
+    The for-of loop is similar to the for-in loop because it loops over an object’s elements one by one. 
+
+    Compared to the for-in loop, it is newer and automatically uses an iterator.
+
+    The syntax for the Javascript for-of loop is:
+
+        for (let i of object) {
+            console.log(object[i]);
+        }
+
+    If the object is an array, the for-of loop will print out the 'values' of the array’s indexes in order. 
+
+    If the object contains key-value pairs, the for-of loop will print out every value that exists.
+
+    Like the for-in loop, the for-of loop does not guarantee that keys within key-value pairs will 
+    always be accessed in the same order. 
+
+        The for-of loop also is not a replacement for the for-in loop.
+
+    A good way to tell the for-of loop and for-in loop apart is to remember which data they return. 
+
+        The for-of loop returns values, while the for-in loop returns keys or indexes.
+
+-------
+
+For-Await-Of Loop:
+
+    The for-await-of loop is used when you need to iterate over asynchronous objects or functions. 
+
+    It can return values from objects and the results of function calls. 
+
+    You should never use it on synchronous objects or functions.
+
+    The syntax for the Javascript for-await-of loop is similar to the for-of loop, 
+    except that it has the keyword “await” before its iteration method:
+
+        for await (let i of object) {
+            console.log(object[i]);
+        }
+
+-------
+
+Javascript For Loops in Common Frameworks
+
+    Angular.js For Loop
+
+        The Angular.js framework supports all of the Javascript for loop types listed in the Javascript standard. 
+
+            In addition, it has a specialized for loop of its own called “forEach”.
+
+        The forEach loop syntax is dramatically different from the other loop types we’ve covered so far. 
+
+            A forEach loop is a function built into Angular.js, rather than a simple control structure. 
+
+            You must pass the object to iterate over, and a function that explains what to do with the object’s elements, 
+            into the forEach function. 
+
+        In the following example, you can see an object with three keys printed out on the console.
+
+            let values = {"a": "one", "b": "two", "c": "three"};
+            angular.forEach(values, function(value, key) {
+                console.log(key + ": " + value);
+            });
+
+        The Angular.js forEach loop can also take an optional parameter called a “context.” 
+
+            A context is an external variable that you can use to manipulate the contents of the object you loop over.
+
+        This example fills the array “myContext” with the object keys while it’s printing the object’s 
+        information to the console. 
+
+            The function that handles the object uses the keyword “this” to refer to the “myContext” array.
+
+            let values = {"a": "one", "b": "two", "c": "three"};
+            let myContext = [];
+            angular.forEach(values, function(value, key) {
+                console.log(key + ": " + value);
+                this.push(key);
+            }, myContext);
+
+    -------
+
+    JQuery For Loop:
+
+        JQuery lets you use all of the standard Javascript for loop variations. 
+
+        It does not have its own explicit for loop variant, but it does have specialized methods for 
+        iteration called “each” and “map”.
+
+        The JQuery documentation recommends that you use the “each” and “map” methods whenever possible for 
+        iterating over objects. 
+
+        For loops cannot iterate over some specialized JQuery objects, so the “each” and “map” functions are 
+        effective replacements in those cases.
+
+        A for loop using “each” in a general sense would look like this, using a function to describe 
+        what should be done with an object’s elements:
+
+            $.each(object, function(key, value) {
+                console.log(key);
+                console.log(value);
+            });
+
+        A for loop using “each” on a specialized JQuery object, such as a collection of values, looks a little different. 
+
+        The “each” method understands that each element in the collection is its context, 
+        which is referred to by the “this” keyword. 
+
+        As mentioned earlier, Angular.js also uses this mechanism with for loops.
+
+        $("p").each(function(i, element) {
+            console.log($(this));
+        });
+
+        The “map” methods function in the same way as “each,” except that they handle 
+        key-value pairs rather than single elements.

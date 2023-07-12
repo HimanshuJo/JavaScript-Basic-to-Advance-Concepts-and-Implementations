@@ -1,0 +1,129 @@
+<!--
+The string.match() is an inbuilt function in JavaScript used to search a string 
+for a match against any regular expression. 
+
+If the match is found, then this will return the match as an array.
+
+-------
+
+Syntax: 
+
+	string.match(regExp)
+
+-------
+
+Parameters: 
+
+	Here the parameter is “regExp” (i.e. regular expression) which will compare with the given string.
+
+Return Value: 
+
+	It will return an array that contains the matches one item for each match or if the 
+	match will not found then it will return Null.
+
+-------
+
+JavaScript code to show the working of match() function:
+
+	Example 1: 
+
+	Input: 
+	var string = Welcome to geeks for geeks!
+	document.write(string.match(/eek/g);
+
+	Output:
+	eek, eek
+
+	In the above example, substring “eek” will match with the given string, and when a match is found, 
+	it will return an array of string objects. 
+
+	Here “g” flag indicates that the regular expression should be tested against all possible matches in a string. 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<body>
+		<script>
+		    // initializing function to demonstrate match()
+		    // method with "g" para
+		    function matchString() {
+		        var string = "Welcome to geeks for geeks";
+		        var result = string.match(/eek/g);
+		        document.write("Output : " + result);
+		    } matchString();
+		</script>
+
+		<!--
+			Output: 
+
+			eek,eek
+		-->
+
+		<!--
+			Example 2: 
+	 
+			Input:
+			var string = "Welcome to GEEKS for geeks!";
+			document.write(string.match(/eek/i);
+
+			Output:
+			EEK
+
+			In the above example, the substring “eek” will match with the given string, 
+			and it will return instantly if it found the match. 
+
+			Here “i” parameter helps to find the case-insensitive match in the given string. 
+		-->
+
+		<script>
+			// initializing function to demonstrate match()
+			// method with "i" para
+			function matchString() {
+				var string = "Welcome to GEEKS for geeks!";
+				var result = string.match(/eek/i);
+				document.write("Output : " + result);
+			} matchString();
+		</script>				
+
+		<!--
+			Output: 
+
+			EEK
+		-->
+
+		<!--
+			Example 3: 
+			 
+			Input:
+			var string = "Welcome to GEEKS for geeks!";
+			document.write(string.match(/eek/gi);
+
+			Output:
+			EEK, eek
+
+			In the above example, the substring “eek” will match with the given string, 
+			and it will return instantly if it found the match. 
+
+			Here “gi” parameter helps to find the case-insensitive match AND all 
+			possible combinations in the given string. 
+		-->
+
+		<script>
+			// initializing function to demonstrate match()
+			// method with "gi" para
+			function matchString() {
+				var string = "Welcome to GEEKS for geeks!";
+				var result = string.match(/eek/gi);
+				document.write("Output : " + result);
+			} matchString();
+		</script>				
+
+		<!--
+			Output: 
+			
+			EEK,eek
+		-->
+	</body>
+</head>
+</html>

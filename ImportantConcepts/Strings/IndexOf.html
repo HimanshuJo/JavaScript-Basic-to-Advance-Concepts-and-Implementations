@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Strings</h1>
+<h2>The indexOf() Method</h2>
+
+<p>indexOf() returns the position of the first occurrence of a value in a string.</p>
+
+<p>Find "welcome" in "Hello world, welcome to the universe.":</p>
+
+<p id="demo"></p>
+
+<p>Find "index of 'e'" in "Hello world, welcome to the universe.":</p>
+<p id="demo2"></p>
+
+<p>Find "index of 'e' after position 5" in "Hello world, welcome to the universe.":</p>
+<p id="demo3"></p>
+
+<script>
+let text = "Hello world, welcome to the universe.";
+let result = text.indexOf("welcome");
+
+document.getElementById("demo").innerHTML = result;
+document.getElementById("demo2").innerHTML = text.indexOf("e");
+document.getElementById("demo3").innerHTML = text.indexOf("e", 5);
+
+testIndexOf();
+
+function testIndexOf(){
+	const paragraph = 'Hello world, welcome to the universe.';
+
+	const searchTerm = 'e';
+	const indexOfFirst = paragraph.indexOf(searchTerm, 5);
+
+	console.log(`The index of the first "${searchTerm}" from the beginning is ${indexOfFirst}`);
+	// expected output: "The index of the first "dog" from the beginning is 40"
+
+	console.log(`The index of the 2nd "${searchTerm}" is ${paragraph.indexOf(searchTerm, (indexOfFirst + 1))}`);
+	// expected output: "The index of the 2nd "dog" is 52"
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!--
+Map.clear() Method in JavaScript
+
+	The Map.clear() method in JavaScript is used for the removal of all the elements from 
+	a map and make it empty. 
+
+	It removes all the [key, value] from the map. 
+
+	No arguments are required to be sent as parameters to the Map.clear() method and 
+	it returns an undefined return value.
+
+-------
+
+Syntax:
+
+	mapObj.clear()
+
+Parameters Used:
+
+	No parameters are required in the Map.clear() method.
+
+Return Value:
+	
+	Map.clear() method has an undefined return type.
+
+-------
+
+Examples:
+
+	Input : var myMap = new Map();
+	        myMap.set(0, 'geeksforgeeks');
+	        console.log(myMap.size);
+	        myMap.clear();
+	        console.log(myMap.size);
+
+	Output: 1
+	        0
+
+	Explanation: 
+
+		In this example, a map object “myMap” has been created with a single [key, value] 
+		pair and the Map.clear() method is used to remove the [key, value] pair from “myMap”. 
+
+		myMap.size() is used to check the number of [key, value] pairs belonging to the map object.
+
+	-------
+
+	Input : var myMap = new Map();
+	        myMap.set(0, 'geeksforgeeks');
+	        myMap.set(1, 'is an online portal');
+	        myMap.set(2, 'for geeks');
+	        console.log(myMap.size);
+	        myMap.clear();
+	        console.log(myMap.size);
+
+	Output : 3
+	         0
+
+	Explanation: 
+
+		In this example, a map object “myMap” has been created with a three
+		[key, value] pairs and the Map.clear() method is used to remove all the [key, value] 
+		pairs from “myMap”. myMap.size() is used to check the number of [key, value] 
+		pairs belonging to the map object.
+-->
+
+<!--
+Applications:
+
+	Map.clear() Method is used to remove all the [key, value] pairs of a map
+-->
+
+<!--
+Exceptions :
+
+	If the variable is not of the Map type then the Map.entries() operation throws a TypeError.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script>
+
+		// creating a map object
+		var myMap = new Map();
+
+		// Adding [key, value] pair to the map
+		myMap.set(0, 'geeksforgeeks');
+
+		// displaying the number of
+		// [key, value] pairs the map has
+		document.write(myMap.size);
+		document.write("<br>");
+
+		// removing the [key, value] pairs of
+		// the map using Map.clear() method
+		myMap.clear();
+
+		// displaying the number of
+		// [key, value] pairs the map has
+		document.write(myMap.size);
+
+	</script>
+
+	<!--
+		OUTPUT :
+
+		1
+		0
+	-->
+
+	<script>
+		// creating a map object
+		var myMap = new Map();
+
+		// Adding [key, value] pair to the map
+		myMap.set(0, 'geeksforgeeks');
+		myMap.set(1, 'is an online portal');
+		myMap.set(2, 'for geeks');
+
+		// displaying the number of
+		// [key, value] pairs the map has
+		document.write(myMap.size);
+		document.write("<br>");
+
+		// removing the [key, value] pairs
+		// of the map using Map.clear() method
+		myMap.clear();
+
+		// displaying the number of
+		// [key, value] pairs the map has
+		document.write(myMap.size);
+	</script>					
+
+	<!--
+		OUTPUT :
+
+		3
+		0
+	-->
+
+	<script>
+
+		// creating a map object
+		var myMap = new Map();
+
+		// Adding [key, value] pair to the map
+		myMap.set(0, 'Maps');
+		myMap.set(1, 'in JavaScript');
+
+		// displaying the number of
+		// [key, value] pairs the map has
+		document.write(myMap.size);
+		document.write("<br>");
+
+		// removing the [key, value] pairs of
+		// the map using Map.clear() method
+		myMap.clear();
+
+		// displaying the number of
+		// [key, value] pairs the map has
+		document.write(myMap.size);
+
+	</script>					
+
+	<!--
+		OUTPUT :
+
+     	2
+     	0
+	-->
+</body>
+</html>
